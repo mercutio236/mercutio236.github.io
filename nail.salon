@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маникюрный мастер | Анастасия</title>
+    <!-- Подключаем современный шрифт из Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /* Это стили. Они отвечают за внешний вид */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fef9f7; /* Очень светлый, тёплый фон */
+            color: #3c2a24;
+            line-height: 1.5;
+        }
+
+        /* Контейнер, который держит всё по центру */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        header {
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #ffe1d4;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #b85c38;
+        }
+
+        /* Главный блок (Hero) */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 60px 0;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #2c1a14;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: #5a423a;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #b85c38;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #9c4526;
+        }
+        .hero-image {
+            flex: 1;
+            background-color: #ffe1d4;
+            border-radius: 40px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #b85c38;
+            font-weight: 600;
+        }
+        /* Заглушка для фото. Потом заменишь на своё изображение */
+        .placeholder-img {
+            font-size: 18px;
+        }
+
+        /* Секция с услугами и ценами */
+        .services {
+            padding: 60px 0;
+            background-color: #fff6f2;
+            border-radius: 50px;
+            margin: 20px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #2c1a14;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-name {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .service-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #b85c38;
+            margin: 15px 0;
+        }
+        .service-desc {
+            color: #7a5a4e;
+            font-size: 14px;
+        }
+
+        /* Галерея работ */
+        .gallery {
+            padding: 60px 0;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .gallery-item {
+            background-color: #e6cfc2;
+            border-radius: 28px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #5a3e32;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Блок с контактами и соцсетями */
+        .contact {
+            background: #3c2a24;
+            color: #fff3ef;
+            padding: 50px 0;
+            border-radius: 50px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .contact h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .contact p {
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            background-color: #b85c38;
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .social-link:hover {
+            background-color: #fff3ef;
+            color: #b85c38;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+            color: #866a5c;
+        }
+
+        /* Адаптация под телефон */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">Маникюр by Анастасия</div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Идеальный маникюр<br> для вашего настроения</h1>
+            <p>Аккуратно, стерильно, стильно. Работаю с покрытием, дизайном, укреплением ногтей. Уютная студия в центре города.</p>
+            <!-- Кнопка для записи (можно будет заменить ссылкой на WhatsApp или Telegram) -->
+            <a href="#" class="btn">Записаться онлайн →</a>
+        </div>
+        <div class="hero-image">
+            <div class="placeholder-img">
+                [Здесь будет ваше фото]<br>
+                Вы можете заменить этот блок на своё изображение
+            </div>
+        </div>
+    </section>
+</div>
+
+<section class="services">
+    <div class="container">
+        <h2 class="section-title">Услуги и цены</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-name">Маникюр + покрытие</div>
+                <div class="service-price">1800 ₽</div>
+                <div class="service-desc">Классический/аппаратный, гель-лак, уход за кутикулой</div>
+            </div>
+            <div class="service-card">
+                <div class="service-name">Дизайн (1 рука)</div>
+                <div class="service-price">от 300 ₽</div>
+                <div class="service-desc">Рисунок, френч, градиент, стемпинг</div>
+            </div>
+            <div class="service-card">
+                <div class="service-name">Снятие чужого покрытия</div>
+                <div class="service-price">400 ₽</div>
+                <div class="service-desc">Аккуратное снятие без повреждений</div>
+            </div>
+            <div class="service-card">
+                <div class="service-name">Укрепление (база/акрил)</div>
+                <div class="service-price">+500 ₽</div>
+                <div class="service-desc">Для тонких и ломких ногтей</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <section class="gallery">
+        <h2 class="section-title">Примеры работ</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">Фото 1: нежный нюд</div>
+            <div class="gallery-item">Фото 2: френч с дизайном</div>
+            <div class="gallery-item">Фото 3: красный гель-лак</div>
+            <div class="gallery-item">Фото 4: втирка металлик</div>
+        </div>
+        <!-- Здесь ты потом заменишь эти заглушки на реальные изображения. Чтобы вставить картинку, используй тег <img src="твоя_картинка.jpg" alt="описание"> -->
+    </section>
+
+    <section class="contact">
+        <h3>Запишитесь на удобное время</h3>
+        <p>📍 Минск, ул. Гикало 10 / Онлайн-запись 24/7<br>📱 Ответ в течение часа</p>
+        <div class="social-links">
+            <a href="#" class="social-link">WhatsApp</a>
+            <a href="#" class="social-link">Telegram</a>
+            <a href="#" class="social-link">Instagram</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Маникюр by Анастасия. Сайт-визитка.
+    </footer>
+</div>
+
+</body>
+</html>
