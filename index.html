@@ -294,9 +294,41 @@
     </section>
 
     <footer>
-        © 2025 Маникюр by Оксана. Сайт-визитка.
+        © 2026 Маникюр by Оксана. Сайт-визитка.
     </footer>
 </div>
 
 </body>
+    <!-- Анимация при прокрутке -->
+<style>
+    .fade-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<script>
+    // Добавляем класс fade-up нужным блокам
+    document.querySelectorAll('.services, .gallery, .contact').forEach(el => {
+        el.classList.add('fade-up');
+    });
+    
+    // Функция проверки видимости
+    function checkVisibility() {
+        document.querySelectorAll('.fade-up').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add('visible');
+            }
+        });
+    }
+    
+    window.addEventListener('load', checkVisibility);
+    window.addEventListener('scroll', checkVisibility);
+</script>
 </html>
